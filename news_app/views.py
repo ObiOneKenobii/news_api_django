@@ -12,9 +12,11 @@ from news_app.serializer import UserSerializer
 from rest_framework import permissions
 from news_app.permissions import IsOwnerOrReadOnly
 from rest_framework.permissions import IsAuthenticated
+from django.http import HttpResponse
 
 # Create your views here.
-
+def home(request):
+    return HttpResponse("Welcome To my News API")
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer

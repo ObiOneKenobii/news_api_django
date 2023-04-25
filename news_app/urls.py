@@ -4,6 +4,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 
 urlpatterns = [
+    path('',views.home, name= 'home'),
     path('news_app', views.PostList.as_view()),
     path ('news_app/<int:pk>/', views.PostDetail.as_view()),
     path('users/',views.UserList.as_view()),
